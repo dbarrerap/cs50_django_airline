@@ -13,6 +13,7 @@
             <th>Origin</th>
             <th>Destination</th>
             <th>Duration</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,9 @@
             <td>{{ flight.origin }}</td>
             <td>{{ flight.destination }}</td>
             <td>{{ flight.duration }} min.</td>
+            <td>
+                <a href="{% url 'details' flight.id %}" class="btn btn-outline-primary">Details</a>
+            </td>
         </tr>
         {% endfor %}
     </tbody>

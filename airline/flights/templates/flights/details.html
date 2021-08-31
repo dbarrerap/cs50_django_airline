@@ -1,0 +1,16 @@
+{% extends 'flights/layout.html' %}
+
+
+{% block title %}- Flight Details{% endblock %}
+
+{% block content %}
+<h1>Flight {{ flight.id }}</h1>
+
+<h2 class="border-bottom">Details</h2>
+<dl>
+    <dt>Origin:</dt><dd>{{ flight.origin }}</dd>
+    <dt>Destination:</dt><dd>{{ flight.destination }}</dd>
+    <dt>Duration:</dt><dd>{{ flight.duration }}</dd>
+</dl>
+<a href="{% url 'index' %}">Back to list</a>
+{% endblock %}
