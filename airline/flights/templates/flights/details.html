@@ -21,5 +21,21 @@
     <li>No passengers.</li>
     {% endfor %}
 </ul>
+
+<h3 class="border-bottom">Add a Passenger</h3>
+<form action="{% url 'book' flight.id %}" method="post">
+    {% csrf_token %}
+    <div class="row g-2 mb-2">
+        <div class="form-floating col-3">
+            <input type="text" name="passenger_first" id="txt_passenger_first" class="form-control" placeholder="Passenger">
+            <label for="txt_passenger_first">First Name</label>
+        </div>
+        <div class="form-floating col-3">
+            <input type="text" name="passenger_last" id="txt_passenger_last" class="form-control" placeholder="Passenger">
+            <label for="txt_passenger_last">Last Name</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
 <a href="{% url 'index' %}">Back to list</a>
 {% endblock %}
