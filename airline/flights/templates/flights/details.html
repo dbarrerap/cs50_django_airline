@@ -12,5 +12,14 @@
     <dt>Destination:</dt><dd>{{ flight.destination }}</dd>
     <dt>Duration:</dt><dd>{{ flight.duration }}</dd>
 </dl>
+
+<h2 class="border-bottom">Passengers</h2>
+<ul>
+    {% for passenger in passengers %}
+    <li>{{ passenger }}</li>
+    {% empty %}
+    <li>No passengers.</li>
+    {% endfor %}
+</ul>
 <a href="{% url 'index' %}">Back to list</a>
 {% endblock %}
